@@ -8,6 +8,8 @@
     domain_name: "devtraining.icu"
     instance: 
     - mongodb
+    - reddis
+    - mysql
   tasks:
   - name: create an EC2 instance
     amazon.aws.ec2_instance:
