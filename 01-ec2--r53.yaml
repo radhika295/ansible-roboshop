@@ -1,7 +1,7 @@
 - name: create an EC2 instance
   hosts: local
   connection: local
-  vras: 
+  vars: 
     ami_id: "ami-09c813fb71547fc4f"
     sg_id: "sg-045897fa6d8ffd258"
     zone_id: "Z07503961RHS7OI25U00O"
