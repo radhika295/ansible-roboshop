@@ -8,7 +8,10 @@
     domain_name: "devtraining.icu"
     instance: 
     - mongodb
-    
+    - reddis
+    - mysql
+    - rabbitmq
+
   tasks:
   - name: create an EC2 instance
     amazon.aws.ec2_instance:
@@ -19,9 +22,9 @@
     loop: "{{ instance }}"
     register: ec2_output
 
-  # - name: print the ec2_output
-  #   ansible.builtin.debug:
-  #     msg: "{{ ec2_output }}"
+  - name: print the ec2_output
+    ansible.builtin.debug:
+      msg: "{{ ec2_output }}"
   # - name: print public_ip
   #   ansible.builtin.debug: 
   #     msg: "{{ item.instances[0].public_ip_address }}"
