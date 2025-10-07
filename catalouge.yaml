@@ -61,7 +61,7 @@
   
   - name: print the out values
     ansible.builtin.debug:
-      msg: "{{cataloge_output}}"
+      msg: "{{catalogu_output}}"
  
   # - name: load products into mongodb
   #   ansible.builtin.shell: mongosh --host mongodb.devtraining.icu </app/db/master-data.js
