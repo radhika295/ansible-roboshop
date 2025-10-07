@@ -20,8 +20,18 @@
       system: true
       shell: /sbin/nologin
       home: /app
-      
+
   - name: create app directory
     ansible.builtin.file:
       state: directory
       path: /app
+  - name: download catalogue application
+    ansible.builtin.get_url:
+      url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
+      dest: /tmp/catalogue.zip
+
+  - name: extract catalogue application
+    ansible.builtin.unarchive:
+      src: /tmp/catalogue.zip
+      dest: /app
+      remote_src: yes
