@@ -1,0 +1,8 @@
+- name: catalouge server configuration
+  hosts: catalouge
+  become: yes
+  tasks:
+  - name: disable nodejs
+    ansible.builtin.command: dnf module disable nodejs -y
+  - name: enable nodejs20
+    ansible.builtin.command: dnf module enable nodejs:20 -y
