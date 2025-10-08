@@ -18,14 +18,15 @@
     ansible.builtin.file:
       state: absent
       path: /usr/share/nginx/html/
-  - name: dowload the url
-    ansible.builtin.get_url:
-      url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
-      dest: /tmp/frotnend.zip
   - name: remove html file
     ansible.builtin.file:
       path: /usr/share/nginx/html/
       state: directory
+  - name: dowload the url
+    ansible.builtin.get_url:
+      url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
+      dest: /tmp/frotnend.zip
+  
   - name: unzip the downloaed file
     ansible.builtin.unarchive:
       src: /tmp/frontend.zip
