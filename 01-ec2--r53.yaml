@@ -7,11 +7,9 @@
     zone_id: "Z07503961RHS7OI25U00O"
     domain_name: "devtraining.icu"
     instance: 
-    - mongodb
-    - reddis
-    - rabbitmq
-    - mysql
-    - catalouge
+    - user
+    - cart
+    - payment
 
   tasks:
   - name: create an EC2 instance
